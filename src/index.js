@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import List from './List';
-import SearchResults from './List/SearchResults'
-import Header from './Header'
+import List from './components/List';
+import SearchResults from './components/List/SearchResults'
+import Header from './components/Header'
 import { Provider } from 'react-redux'
 import store from './store'
 import './index.css'

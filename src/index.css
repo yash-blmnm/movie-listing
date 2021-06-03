@@ -13,13 +13,25 @@ body {
   background-size: cover
 }
 
-/* Hide scrollbar for Chrome, Safari and Opera */
-.example::-webkit-scrollbar {
+::-webkit-scrollbar {
   display: none;
+  width: 0 !important
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
-body {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+/* Hide scrollbar for IE and Edge */
+.scrollableDiv {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+}
+
+.scrollableDiv{
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.movie-list{
+  height: 100%;
+  width: 100%;
+  overflow: auto;
 }

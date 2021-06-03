@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import { searchMovies } from "../store/reducers";
+import { searchMovies } from "../../store/reducers";
 import Item from "./Item";
 import { useLocation } from "react-router-dom";
 
@@ -21,13 +21,18 @@ const SearchResults = ({currentList,  searchData }) => {
   }, [currentList]);
 
   return (
-    <div className="movie-list grid grid-cols-3 gap-4 gap-y-8">
-      {moviesList.map((item, index) => {
-        return(
-          <Item name={item.name} poster={item['poster-image']} key={index+1}/>
-        )
-      })}
-    </div>
+    (moviesList.length ?
+      <div className="grid grid-cols-3 gap-4 gap-y-8">
+        {moviesList.map((item, index) => {
+          return(
+            <Item name={item.name} poster={item['poster-image']} key={index+1}/>
+          )
+        })}
+      </div>
+    :
+        <p>No posts found</p>
+    )
+    
   )
 }
 

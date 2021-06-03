@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import { listMovies } from "../store/reducers";
+import { listMovies } from "../../store/reducers";
 import Item from './Item';
 import InfiniteScroll from 'react-infinite-scroll-component'
 const INITIAL_PAGE_NUM = 1;
@@ -32,7 +32,7 @@ const List = ({ loadMovies, currentList, totalItems, loadMore }) => {
         loader={''}
         scrollableTarget="scrollableDiv"
       >
-        <div className="w-full grid grid-cols-3 gap-4 gap-y-8">
+        <div className="movie-list grid grid-cols-3 gap-4 gap-y-8">
           {moviesList.map((item, index) => {
             return(
               <Item name={item.name} poster={item['poster-image']} key={index+1}/>
@@ -59,14 +59,3 @@ const mapStateToProps = state => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(List);
-
-
-
-
-    // <div className="movie-list grid grid-cols-3 gap-4 gap-y-8">
-    //   {currentList && currentList.content.length && currentList.content.map((item, index) => {
-    //     return(
-    //       <Item name={item.name} poster={item['poster-image']} key={index+1}/>
-    //     )
-    //   })}
-    // </div>
