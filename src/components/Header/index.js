@@ -5,6 +5,7 @@ import { useHistory } from 'react-router-dom';
 import HeaderIcon from '../library/HeaderIcon';
 import SearchBar from '../library/SearchBar';
 import HeaderTitle from '../library/HeaderTitle';
+import {list, searchURL} from '../../constants/routes';
 
 
 
@@ -14,13 +15,13 @@ function Header() {
 
   const onSubmit = ({search}) => {
     if(search.trim().length > 3){
-      history.push(`/search?text=${search}`);
+      history.push(`${searchURL}?text=${search}`);
     }
   };
 
   const onSearchClose = () => {
     setDisplaySearch(!displaySearch); 
-    history.push(`/`);
+    history.push(`${list}`);
   }
 
   return (

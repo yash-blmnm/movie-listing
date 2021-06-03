@@ -7,7 +7,7 @@ import { Provider } from 'react-redux'
 import store from './store'
 import './index.css'
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
-import {list, search} from './constants/routes';
+import {list, searchURL} from './constants/routes';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -21,7 +21,7 @@ ReactDOM.render(
           <Route exact path={list}>
             <List />
           </Route>
-          <Route path={search}>
+          <Route path={searchURL}>
             <SearchResults />
           </Route>
         </Switch>

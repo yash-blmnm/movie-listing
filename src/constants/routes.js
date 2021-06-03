@@ -1,2 +1,2 @@
-export const list = '/';
-export const search = '/search';
+export const list = '/movie-listing';
+export const searchURL = '/search';

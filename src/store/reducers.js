@@ -2,6 +2,7 @@ import axios from "axios";
 
 const LIST_MOVIES = "LIST_MOVIES";
 const SEARCH_MOVIES = "SEARCH_MOVIES";
+const MOCK_DATA_URL = 'https://afternoon-castle-41801.herokuapp.com'
 const initialState = {
   content: {
     id: 1,
@@ -38,7 +39,7 @@ export const listMovies = (pageNum) => {
   //   })
   // }
   return (dispatch) => {
-    return axios.get(`http://localhost:5000/content/${pageNum}`).then((response)=> {
+    return axios.get(`${MOCK_DATA_URL}/content/${pageNum}`).then((response)=> {
         dispatch({
             type: LIST_MOVIES,
             payload: { 
@@ -64,7 +65,7 @@ function filterSearchList(data, text){
 
 export const searchMovies = (text) => {
   return (dispatch) => {
-    return axios.get(`http://localhost:5000/content`).then((response)=> {
+    return axios.get(`${MOCK_DATA_URL}/content`).then((response)=> {
       dispatch({
           type: SEARCH_MOVIES,
           payload: filterSearchList(response.data, text)

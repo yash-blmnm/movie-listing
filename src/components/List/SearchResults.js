@@ -22,7 +22,7 @@ const SearchResults = ({currentList,  searchData }) => {
 
   return (
     (moviesList.length ?
-      <div className="grid grid-cols-3 gap-4 gap-y-8">
+      <div className="movie-list grid grid-cols-3 gap-4 gap-y-8 p-2">
         {moviesList.map((item, index) => {
           return(
             <Item name={item.name} poster={item['poster-image']} key={index+1}/>
@@ -30,7 +30,7 @@ const SearchResults = ({currentList,  searchData }) => {
         })}
       </div>
     :
-        <p>No posts found</p>
+        <p className="bg-white text-black text-center p-4">No posts found</p>
     )
     
   )

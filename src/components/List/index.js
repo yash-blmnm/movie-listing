@@ -32,7 +32,7 @@ const List = ({ loadMovies, currentList, totalItems, loadMore }) => {
         loader={''}
         scrollableTarget="scrollableDiv"
       >
-        <div className="movie-list grid grid-cols-3 gap-4 gap-y-8">
+        <div className="movie-list grid grid-cols-3 gap-4 gap-y-8 p-2">
           {moviesList.map((item, index) => {
             return(
               <Item name={item.name} poster={item['poster-image']} key={index+1}/>

@@ -17,7 +17,7 @@ function Item({ name, poster }) {
         }
       >
         <img
-          src={`./Slices/${poster}`}
+          src={`${process.env.PUBLIC_URL}/Slices/${poster}`}
           alt={name}
           className="w-full"
           onError={addDefaultSrc}
