@@ -28,6 +28,11 @@ The link used to retrieve data is [https://afternoon-castle-41801.herokuapp.com/
 
 Yet to implement **React Window** for displaying/loading only the posters in the current viewport of users for performance optimization.
 
+Yet to implement Scroll to top once page loads/component re-renders.
+
+Since the API is hosted in Heroku, it "Powers down" after 30 mins of inactivity. Starts back up when you visit the site but it takes a few extra seconds. Can maybe be solved with Kaffeine
+
+
 ## Code Structure Design
 
 **`src/components`** holds all the UI components used.
