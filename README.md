@@ -28,6 +28,17 @@ The link used to retrieve data is [https://afternoon-castle-41801.herokuapp.com/
 
 Yet to implement **React Window** for displaying/loading only the posters in the current viewport of users for performance optimization.
 
+## Code Structure Design
+
+**`src/components`** holds all the UI components used.
+
+**`src/components/libraries`** holds the reusable UI components.
+
+**`src/images`** holds all the default images used.
+
+**`public/Slices`** holds all public posters/images used(like downloading from a third party Storage Bucket on demand).
+
+
 ## Installation in Local
 
 ### `yarn` 
