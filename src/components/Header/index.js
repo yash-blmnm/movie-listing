@@ -14,7 +14,7 @@ function Header() {
   const history = useHistory();
 
   const onSubmit = ({search}) => {
-    if(search.trim().length > 3){
+    if(search.trim().length >= 3){
       history.push(`${searchURL}?text=${search}`);
     }
   };

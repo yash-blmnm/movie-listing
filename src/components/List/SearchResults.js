@@ -10,11 +10,12 @@ function useQuery() {
 
 const SearchResults = ({currentList,  searchData }) => {
   let query = useQuery();
+  let location = useLocation();
   const [ moviesList, setMoviesList ] = useState([]);
 
   useEffect(() => {
     searchData(query.get("text")); // load search results data 
-  }, []);
+  }, [location.search]);
 
   useEffect(() => {
     setMoviesList(currentList ? currentList.content : []);
@@ -38,7 +39,7 @@ const SearchResults = ({currentList,  searchData }) => {
 
 const mapStateToProps = state => {
   return {
-    currentList: state.content.currentList
+    currentList: state.content.searchList
   }
 };
 

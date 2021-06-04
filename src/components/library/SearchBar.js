@@ -17,6 +17,7 @@ function SearchBar({onSubmit, onSearchClose}) {
           {...register("search")}
           className="border-0 bg-black outline-none font-extralight w-full text-xs	"
           autoFocus
+          placeholder="Please enter more than 2 letters to search"
         />
       </form>
       <span className="mx-2">

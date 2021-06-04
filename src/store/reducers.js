@@ -32,12 +32,6 @@ export const content = (state = initialState, action) => {
 
 
 export const listMovies = (pageNum) => {
-  // return (dispatch) => {
-  //   dispatch({
-  //       type: LIST_MOVIES,
-  //       payload: list
-  //   })
-  // }
   return (dispatch) => {
     return axios.get(`${MOCK_DATA_URL}/content/${pageNum}`).then((response)=> {
         dispatch({
@@ -60,7 +54,7 @@ function filterSearchList(data, text){
     });
     filteredData= [...filteredData, ...pageFilterdata];
   }
-  return {currentList: {content: filteredData}, totalItems: filteredData.length};
+  return {searchList: {content: filteredData}, totalItems: filteredData.length};
 }
 
 export const searchMovies = (text) => {

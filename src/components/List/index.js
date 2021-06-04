@@ -3,14 +3,16 @@ import { connect } from "react-redux";
 import { listMovies } from "../../store/reducers";
 import Item from './Item';
 import InfiniteScroll from 'react-infinite-scroll-component'
+import { useLocation } from "react-router-dom";
 const INITIAL_PAGE_NUM = 1;
 
 const List = ({ loadMovies, currentList, totalItems, loadMore }) => {
   const [ pageNum, setPageNum ] = useState(INITIAL_PAGE_NUM);
   const [ moviesList, setMoviesList ] = useState([]);
+  const location = useLocation();
   useEffect(() => {
     loadMovies(pageNum); // load initial set of movies
-  }, []);
+  }, [location]);
 
   useEffect(() => {
     setMoviesList(currentList ? [...moviesList, ...currentList.content] : []); // load more movies
